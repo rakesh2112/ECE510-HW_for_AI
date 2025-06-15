@@ -32,8 +32,7 @@ LSTM models, especially when deployed on edge devices or FPGAs, face computation
 
 - ✅ Fully synthesizable IEEE-754 floating-point multiplier (`fp_mult.v`)
 - ✅ Fully synthesizable IEEE-754 floating-point adder (`fp_add.v`)
-- ✅ FSM-driven, pipelined matrix-vector multiplier (`matrix_vector_mul_fp.sv`)
-- ✅ NumPy-compatible `.mem` file format interface
+- ✅ FSM-driven, pipelined matrix-vector multiplierto scale the LSTM layers (`matrix_vector_mul_fp.sv`)
 - ✅ Self-contained RTL—no simulation-only constructs
 - ✅ Designed for educational and research prototyping
 
@@ -41,15 +40,22 @@ LSTM models, especially when deployed on edge devices or FPGAs, face computation
 
 ##    Directory Structure
 
-```bash
-├── fp_add.v                   # Floating point adder (synthesizable)
-├── fp_mult.v                  # Floating point multiplier (synthesizable)
-├── matrix_vector_mul_fp.sv    # RTL Matrix-vector multiplier using fp_add/fp_mult
-├── tb_matrix_mul.sv           # Testbench (optional)
-├── data/
-│   ├── input_vector.mem       # IEEE-754 vector
-│   └── input_matrix.mem       # IEEE-754 matrix
-├── scripts/
-│   └── numpy_to_mem.py        # Script to convert NumPy arrays to .mem
-├── README.md
-└── LSTM_RTL_Offload_Report.docx
+ECE510-HW_FOR_AI/
+├── challenges/
+│   └── Docs/
+│       ├── Challenge_3_Physical_System_Differential_Equations.pdf
+│       ├── challenge-4.pdf
+│       └── HW for AI and ML_self documentation.pdf
+└── project/
+    └── src/
+        ├── model/
+        │   ├── cli_tool/
+        │   ├── LSTM Model/
+        │   └── trained_models/
+        ├── profile_output.txt
+        ├── snakeviz_profile.prof
+        ├── README.md
+        ├── RTL/
+        └── tb/
+README.md
+
