@@ -41,21 +41,21 @@ LSTM models, especially when deployed on edge devices or FPGAs, face computation
 ##    Directory Structure
 
 ECE510-HW_FOR_AI/
-├── challenges/
-│   └── Docs/
-│       ├── Challenge_3_Physical_System_Differential_Equations.pdf
-│       ├── challenge-4.pdf
-│       └── HW for AI and ML_self documentation.pdf
-└── project/
-    └── src/
-        ├── model/
-        │   ├── cli_tool/
-        │   ├── LSTM Model/
-        │   └── trained_models/
-        ├── profile_output.txt
-        ├── snakeviz_profile.prof
-        ├── README.md
-        ├── RTL/
-        └── tb/
-README.md
+├── challenges/ # Course challenge submissions
+│ └── Docs/
+│ ├── Challenge_3_Physical_System_Differential_Equations.pdf
+│ ├── challenge-4.pdf
+│ └── HW_for_AI_and_ML_self_documentation.pdf
+├── project/ # Final project: LSTM Matrix Multiply RTL Offload
+│ └── src/
+│ ├── model/ # Python-based LSTM prediction model
+│ │ ├── cli_tool/ # Command-line tools for running predictions
+│ │ ├── LSTM_Model/ # Core LSTM implementation
+│ │ └── trained_models/ # Pretrained models for different stocks
+│ ├── RTL/ # RTL implementation (SystemVerilog)
+│ ├── tb/ # Testbench files for RTL simulation
+│ ├── profile_output.txt # Profiling output (plain text)
+│ ├── snakeviz_profile.prof # SnakeViz profiler data
+│ └── README.md # Project-specific readme
+└── README.md # Root project readme
 
