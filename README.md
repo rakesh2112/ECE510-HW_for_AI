@@ -40,22 +40,26 @@ LSTM models, especially when deployed on edge devices or FPGAs, face computation
 
 ##    Directory Structure
 
+### 📁 Directory Structure
+
+```
 ECE510-HW_FOR_AI/
-├── challenges/ # Course challenge submissions
-│ └── Docs/
-│ ├── Challenge_3_Physical_System_Differential_Equations.pdf
-│ ├── challenge-4.pdf
-│ └── HW_for_AI_and_ML_self_documentation.pdf
-├── project/ # Final project: LSTM Matrix Multiply RTL Offload
-│ └── src/
-│ ├── model/ # Python-based LSTM prediction model
-│ │ ├── cli_tool/ # Command-line tools for running predictions
-│ │ ├── LSTM_Model/ # Core LSTM implementation
-│ │ └── trained_models/ # Pretrained models for different stocks
-│ ├── RTL/ # RTL implementation (SystemVerilog)
-│ ├── tb/ # Testbench files for RTL simulation
-│ ├── profile_output.txt # Profiling output (plain text)
-│ ├── snakeviz_profile.prof # SnakeViz profiler data
-│ └── README.md # Project-specific readme
-└── README.md # Root project readme
+├── challenges/                  # Course challenge submissions
+│   └── Docs/
+│       ├── Challenge_3_Physical_System_Differential_Equations.pdf
+│       ├── challenge-4.pdf
+│       └── HW_for_AI_and_ML_self_documentation.pdf
+├── project/                     # Final project: LSTM Matrix Multiply RTL Offload
+│   └── src/
+│       ├── model/               # Python-based LSTM prediction model
+│       │   ├── cli_tool/       # Command-line tools for running predictions
+│       │   ├── LSTM_Model/     # Core LSTM implementation
+│       │   └── trained_models/ # Pretrained models for different stocks
+│       ├── RTL/                # RTL implementation (SystemVerilog)
+│       ├── tb/                 # Testbench files for RTL simulation
+│       ├── profile_output.txt  # Profiling output (plain text)
+│       ├── snakeviz_profile.prof # SnakeViz profiler data
+│       └── README.md           # Project-specific readme
+└── README.md                   # Root project readme
+```
 
