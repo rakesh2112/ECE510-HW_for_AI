@@ -1,0 +1,101 @@
+[2025-06-15 16:01:53 UTC] qrun -batch -access=rw+/. '-timescale' '1ns/1ns' -mfcu design.sv testbench.sv '-voptargs=+acc=npr'  -do  " run -all; exit"  
+Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 12:01:54 on Jun 15,2025
+qrun -batch -access=rw+/. -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 12:01:54 on Jun 15,2025
+vlog -timescale 1ns/1ns -mfcu design.sv testbench.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling module matrix_vector_mul_fp
+** Warning: design.sv(204): (vlog-13314) Defaulting port 'matrix' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+** Warning: design.sv(205): (vlog-13314) Defaulting port 'vector' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+-- Compiling module tb_matrix_vector_mul_fp
+
+Top level modules:
+	tb_matrix_vector_mul_fp
+End time: 12:01:54 on Jun 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 2
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 12:01:54 on Jun 15,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	tb_matrix_vector_mul_fp
+
+Analyzing design...
+-- Loading module tb_matrix_vector_mul_fp
+-- Loading module matrix_vector_mul_fp
+Optimizing 2 design-units (inlining 0/2 module instances):
+-- Optimizing module tb_matrix_vector_mul_fp(fast)
+-- Optimizing module matrix_vector_mul_fp(fast)
+** Warning: design.sv(204): (vopt-13314) Defaulting port 'matrix' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+** Warning: design.sv(205): (vopt-13314) Defaulting port 'vector' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+Optimized design name is qrun_opt
+End time: 12:01:54 on Jun 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 3
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 12:01:54 on Jun 15,2025
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb_matrix_vector_mul_fp(fast)
+# Loading work.matrix_vector_mul_fp(fast)
+# 
+# run -all
+# === Floating-Point Matrix-Vector Multiplication Testbench ===
+# 
+# [TESTCASE] All Ones Vector
+# Matrix:
+#   Row 0:   1.00   2.00   3.00   4.00 
+#   Row 1:   5.00   6.00   7.00   8.00 
+# Vector:   1.00   1.00   1.00   1.00 
+# Output:
+#   result[0] = 10.000000
+#   result[1] = 26.000000
+# 
+# [TESTCASE] Mixed Signs
+# Matrix:
+#   Row 0:   0.50  -1.50   2.00   0.00 
+#   Row 1:  -2.00   3.50   1.00   4.00 
+# Vector:   2.00   0.50  -1.00   3.00 
+# Output:
+#   result[0] = -1.750000
+#   result[1] = 8.750000
+# 
+# [TESTCASE] Negative Matrix
+# Matrix:
+#   Row 0:  -3.00  -2.00  -1.00   0.00 
+#   Row 1:   0.00   1.00   2.00   3.00 
+# Vector:   1.00   2.00   3.00   4.00 
+# Output:
+#   result[0] = -10.000000
+#   result[1] = 20.000000
+# 
+# === Testbench Complete ===
+# ** Note: $finish    : testbench.sv(213)
+#    Time: 266 ns  Iteration: 0  Instance: /tb_matrix_vector_mul_fp
+# End time: 12:01:55 on Jun 15,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+End time: 12:01:55 on Jun 15,2025, Elapsed time: 0:00:01
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   2
+    vopt: Errors:   0, Warnings:   3
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   5
+Done
