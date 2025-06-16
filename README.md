@@ -30,11 +30,11 @@ LSTM models, especially when deployed on edge devices or FPGAs, face computation
 
 ##    Features
 
-- ✅ Fully synthesizable IEEE-754 floating-point multiplier (`fp_mult.v`)
-- ✅ Fully synthesizable IEEE-754 floating-point adder (`fp_add.v`)
-- ✅ FSM-driven, pipelined matrix-vector multiplierto scale the LSTM layers (`matrix_vector_mul_fp.sv`)
-- ✅ Self-contained RTL—no simulation-only constructs
-- ✅ Designed for educational and research prototyping
+- Fully synthesizable IEEE-754 floating-point multiplier (`fp_mult.v`)
+- Fully synthesizable IEEE-754 floating-point adder (`fp_add.v`)
+- FSM-driven, pipelined matrix-vector multiplierto scale the LSTM layers (`matrix_vector_mul_fp.sv`)
+- Self-contained RTL—no simulation-only constructs
+- Designed for educational and research prototyping
 
 ---
 
